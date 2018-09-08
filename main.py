@@ -40,7 +40,6 @@ def function_FindInstalledDrivers():
     
     #intel
     if len(function_FindKeywordListOfList(devlist, "8008"))>0:
-        gpubrands = driver[0]
         gpus.append("Intel")
     #amd
     if len(function_FindKeywordListOfList(devlist, "1002"))>0:
