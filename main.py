@@ -49,6 +49,7 @@ def function_FindInstalledDrivers():
         if function_FindKeywordListNotEmpty(driverInUse, "amd"):
             gpus.append("AMD")
         elif function_FindKeywordListNotEmpty(driverInUse, "radeon"):
+            print("[FATAL] radeon gpu detected, earlier model of ATI gpu don't support vulkan: \n" + driver[0])
             gpus.append("AMD-no vulkan")
         elif function_FindKeywordListNotEmpty(driverInUse, "pci-stub"):
             print("[INFO] this gpu is occupied by pci-stub: \n" + driver[0])
