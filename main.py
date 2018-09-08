@@ -104,11 +104,11 @@ def procedure_Main():
     x = function_FindInstalledDrivers()
     print("Your GPU: \n" + x[1])
     if not x[2]:
-        if LooseVersion(x[0]) <  LooseVersion("18.1.2"):
+        if LooseVersion(x[0].strip()) <  LooseVersion("18.1.2"):
             print("[FATAL] driver is to old: min 18.1.2")
         print("Mesa" + " Driver version: " + str(x[0])) 
     else:
-        if LooseVersion(x[0]) <  LooseVersion("396.24.02"):
+        if LooseVersion(x[0].strip()) <  LooseVersion("396.24.02"):
             print("[FATAL] driver is to old: min 396.24.02")
         print("Nvidia propertiary driver" + "Driver version: " + str(x[0]))
 
@@ -117,4 +117,5 @@ def procedure_Main():
             print("[WARN] kernel might too old: min 4.15 ")
 
 procedure_Main()
+
 #print("LLVM version:"+function_CheckLLVM())saf
