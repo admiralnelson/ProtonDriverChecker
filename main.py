@@ -113,8 +113,8 @@ def procedure_Main():
         print("Nvidia propertiary driver" + "Driver version: " + str(x[0]))
 
     print("Kernel Version: " + str(function_CheckKernel()))
-    if LooseVersion(function_CheckKernel()) <  LooseVersion("4.15 "):
-            print("[WARN] kernel might too old: min 4.15 ")
+    if LooseVersion(function_CheckKernel()) <  LooseVersion("4.15"):
+        print("[WARN] kernel might too old: min 4.15 ")
 
 procedure_Main()
 
