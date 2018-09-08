@@ -51,8 +51,10 @@ def function_FindInstalledDrivers():
         elif function_FindKeywordListNotEmpty(driverInUse, "radeon"):
             gpus.append("AMD-no vulkan")
         elif function_FindKeywordListNotEmpty(driverInUse, "pci-stub"):
+            print("[INFO] this gpu is occupied by pci-stub: \n" + driver[0])
             gpus.append("pci-stub")
         elif function_FindKeywordListNotEmpty(driverInUse, "vfio"):
+            print("[INFO] this gpu is occupied by vfio: \n" + driver[0])
             gpus.append("vfio")
     #nvidia
     if len(function_FindKeywordListOfList(devlist, "10de"))>0:
@@ -65,8 +67,10 @@ def function_FindInstalledDrivers():
             print("[WARN] It is not recommended using Nvidia open source driver!")
             gpus.append("Nvidia-noveau")
         elif function_FindKeywordListNotEmpty(driverInUse, "pci-stub"):
+            print("[INFO] this gpu is occupied by pci-stub: \n" + driver[0])
             gpus.append("pci-stub")
         elif function_FindKeywordListNotEmpty(driverInUse, "vfio"):
+            print("[INFO] this gpu is occupied by vfio: \n" + driver[0])
             gpus.append("vfio")
 
     if len(gpus)>1:
