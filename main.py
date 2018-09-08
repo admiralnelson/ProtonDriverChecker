@@ -107,9 +107,12 @@ if not x[2]:
         print("[FATAL] driver is to old: min 18.1.2")
     print("Mesa" + " Driver version: " + str(x[0])) 
 else:
-     if LooseVersion(x[0]) <  LooseVersion("396.24.02"):
+    if LooseVersion(x[0]) <  LooseVersion("396.24.02"):
         print("[FATAL] driver is to old: min 396.24.02")
     print("Nvidia propertiary driver" + "Driver version: " + str(x[0]))
 
 print("Kernel Version: " + str(function_CheckKernel()))
-print("LLVM version:"+function_CheckLLVM())
+if LooseVersion(function_CheckKernel()) <  LooseVersion("4.15 "):
+        print("[WARN] kernel might too old: min 4.15 ")
+
+#print("LLVM version:"+function_CheckLLVM())
